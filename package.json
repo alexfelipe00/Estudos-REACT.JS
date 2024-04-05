@@ -1,0 +1,32 @@
+{
+  "name": "node.js",
+  "version": "1.0.0",
+  "description": "Node.js - Curso avançado de JS",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "teste2": "cls && echo 'Hello Script'",
+    "dev": "nodemon fundamentos/hello.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexfelipe00/NODE.JS.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "estudo"
+  ],
+  "author": "Alex Felipe de Souza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexfelipe00/NODE.JS/issues"
+  },
+  "homepage": "https://github.com/alexfelipe00/NODE.JS#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
