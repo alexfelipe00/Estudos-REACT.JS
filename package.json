@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/alexfelipe00/NODE.JS#readme",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "readline-sync": "^1.4.10",
+    "redline": "^1.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
