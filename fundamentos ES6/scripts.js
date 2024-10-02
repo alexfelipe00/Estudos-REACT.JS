@@ -165,3 +165,75 @@ const productDetails = {
 const {name: productName, price, category: productCategory, color} = productDetails
 
 console.log(`O nome do produto é ${productName} \nR$${price}\nCategoria: ${productCategory}\nCOR: ${color}`)
+
+
+//8 - Spread Operator
+//Concatena listas e objetos evitando laços de repetição
+
+const a1 = [1, 2, 3]
+const a2 = [4, 5, 6]
+
+const a3 = [...a1, ...a2]
+console.log(a3)
+
+
+a4 = [0, ...a1, 4]
+console.log(a4)
+
+
+const carName = {name: 'Gol'}
+const carBrand = {brand: 'VW'}
+const otherInfos = {km: 10000, price: 49000}
+
+const car = {...carName, ...carBrand, ...otherInfos, wheels: 4}
+console.log(car)
+
+
+//9 - Classes
+//POO
+
+class Product{
+    constructor(name, price){
+        this.name = name
+        this.price = price
+    }
+
+    productWithDiscount(discount){
+        //Calcula o valor final com disconto em porcentagem
+        return this.price * ((100 - discount) / 100)
+    }
+}
+
+const shirt = new Product('Camisa gola V', 20)
+
+console.log(shirt.name)
+
+console.log(shirt.productWithDiscount(10))
+
+console.log(shirt.productWithDiscount(50))
+
+const tenis = new Product('Nike 8 molas', 300)
+
+console.log(tenis.productWithDiscount(10))
+
+//10 - Herança
+//Herda metodos e atributos de uma classe já existente
+
+class ProductWithAttributes extends Product{
+    constructor(name, price, colors){
+        //Herdando atributos
+        super(name, price)
+        this.colors = colors
+    }
+
+    showColors(){
+        console.log('As cores são:')
+        this.colors.forEach((color) => {
+            console.log(color)
+        })
+    }
+}
+
+hat = new ProductWithAttributes('Chapéu', '80', ['Azul', 'Vermelho', 'Verde'])
+
+hat.showColors()
