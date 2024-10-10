@@ -6,6 +6,8 @@ import City from "./assets/city.jpg"
 import ManageData from './components/ManageData'
 import ListRender from './components/ListRender'
 import ConditionalRender from './components/ConditionalRender'
+import ShowUserNameProps from './components/ShowUserNameProps'
+import CarDetails from './components/CarDetails'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +27,10 @@ function App() {
         <ManageData/>
         <ListRender/>
         <ConditionalRender/>
+        {/* props */}
+        <ShowUserNameProps name="Matheus"/>
+        {/* destructing */}
+        <CarDetails brand="VW" km={10000} color="Azul" />
       </div>
     </>
   )
