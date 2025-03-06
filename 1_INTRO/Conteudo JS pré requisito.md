@@ -35,7 +35,6 @@ const user = {
 };
 ```
 
-
 ```javascript
 //JSON.stringify - Transforma para JSON
 
@@ -64,7 +63,7 @@ document.body.innerText = mostraIdade(user)
 
 ```
 
-**Objetos - Desestruração - Rest Operator** 
+**Objetos - Desestruração - Rest Operator**
 
 ```javascript
 //Pega o restante dos elementos
@@ -82,4 +81,37 @@ const [first, , third, ...rest] = array;
 		6
 	]
 }
+```
+
+**Objetos -  Optional Chaining**
+
+```javascript
+//Verifica se existe indices antes de tentar acessar
+const user = {
+	name: 'Diego',
+	idade: 27,
+	address: {
+		street: 'Rua teste',
+		number: 964,
+
+		zip:{
+			code: '7982000',
+			city: 'Dourados',
+		},
+		showFullAdress(){
+			return 'ok';
+		}
+	},
+};
+
+//Verifica se o indice address existe, se existir procura pelo indice zip, se existir pega o code, se não existir alguma a primeira verifição pula direto para 'Não informado'
+document.body.innerText = user.adress?.zip?.code ?? 'Não informado';
+
+//Verifica se a função existe dentro da chave address
+document.body.innerText = user.address?.showFullAdress?.()
+
+```
+
+```
+
 ```
