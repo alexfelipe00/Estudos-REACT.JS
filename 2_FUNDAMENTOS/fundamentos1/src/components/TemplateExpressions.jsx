@@ -1,7 +1,7 @@
 const TemplateExpressions = () =>{
     const name = "Alex";
     const data = {
-        age:27,
+        age:28,
         job:"Programmer"
     };
 

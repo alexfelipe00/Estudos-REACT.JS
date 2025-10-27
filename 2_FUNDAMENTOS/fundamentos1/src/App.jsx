@@ -1,4 +1,7 @@
+// styles / CSS
 import './App.css'
+
+// components
 import Events from './components/Events.jsx';
 import FirstComponent from './components/FirstComponent.jsx';
 import TemplateExpressions from './components/TemplateExpressions.jsx';

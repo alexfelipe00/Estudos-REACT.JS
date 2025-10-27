@@ -18,8 +18,8 @@ const Events = () =>{
             <div>
                 <button onClick={handleMyEvent}>Clique Aqui!</button>
             </div>
-            {renderSomething(true)}
             {renderSomething(false)}
+            
         </div>
     )
 }
