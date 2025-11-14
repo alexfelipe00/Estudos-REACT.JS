@@ -2,7 +2,7 @@ import { useState } from "react"
 
 function ConditionalRender() {
     const [x] = useState(false)
-    const [name, setName] = useState("Marcos")
+    const [name, setName] = useState("Marcos") 
   return (
     <div>
         <h2>Condicionais Simples</h2>

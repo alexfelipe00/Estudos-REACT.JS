@@ -1,0 +1,12 @@
+  const ChangeMessegeState = ({handleMessege}) => {
+    const messages = [ "Oi", "Olá", "Oi, tudo bem?"]
+  return (
+    <div>
+        <button onClick={() => handleMessege(messages[0])}>1</button>
+        <button onClick={() => handleMessege(messages[1])}>2</button>
+        <button onClick={() => handleMessege(messages[2])}>3</button>
+    </div>
+  )
+}
+
+export default ChangeMessegeState
