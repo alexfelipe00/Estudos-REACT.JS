@@ -1,0 +1,7 @@
+.my_list{
+    color: rgb(141, 22, 22);
+    background-color: rgb(245, 245, 245);
+    padding: 5px;
+    margin: 5px;
+    border-style: double;
+}
