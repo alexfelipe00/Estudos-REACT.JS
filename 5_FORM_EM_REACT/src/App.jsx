@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import MyForms from '../components/MyForms'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,6 +9,7 @@ function App() {
     <>
       <div>
         <h2>Forms</h2>
+        <MyForms/>
       </div>
     </>
   )
