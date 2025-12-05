@@ -18,6 +18,8 @@ const stages = [
   {id: 3, name: "end"}, //    tela  2
 ]
 
+const guessesQty = 3
+
 
 function App() {
 
@@ -30,12 +32,13 @@ function App() {
 
   const [guessedLetters, setGuessedLetters] = useState([])
   const [wrongLetters, setWrongLetters] = useState([])
-  const [guesses, setGuesses] = useState(3)
+  const [guesses, setGuesses] = useState(guessesQty)
   const [score, setScore] = useState(0)
 
-  const pickWordAndPickCategory = () => {
+  const pickWordAndPickCategory = useCallback(() => {
     // pick a random category
     const categories = Object.keys(words)
+
     //Obtem um item aleatorio do objeto através de seu indice
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
 
@@ -43,10 +46,12 @@ function App() {
     const word = words[category][Math.floor(Math.random() * words[category].length)]    
 
     return {word, category}
-  }
+  }, [words])
 
   // starts the secret words game
-  const startGame = () => {
+  const startGame = useCallback(() => {
+    // clear all letters
+    clearLetterStates()
     // pick word and pick category
     const {word, category} = pickWordAndPickCategory()
 
@@ -63,7 +68,7 @@ function App() {
 
 
     setGameStage(stages[1].name)
-  }
+  }, [pickWordAndPickCategory])
   
   // process the letter input
   const verifyLetter = (letter) =>{
@@ -96,6 +101,7 @@ function App() {
     setWrongLetters([])
   }
 
+  // check if guesses ended
   useEffect(() =>{
     if(guesses <= 0){
       // reset all states
@@ -105,7 +111,26 @@ function App() {
     }
   }, [guesses])
 
+  // check win condition
+  useEffect(()=> {
+    const uniqueLetters = [... new Set(letters)]
+
+    // win condition
+    if(guessedLetters.length === uniqueLetters.length){
+      // add score
+      setScore((actualScore) => actualScore += 100)
+
+      // restart game with new word
+      startGame()
+    }
+
+  }, [guessedLetters, letters, startGame])
+
+  // restars the game
   const retry = () =>{
+    setScore(0)
+    setGuesses(guessesQty)
+
     setGameStage(stages[0].name)
   }
 
